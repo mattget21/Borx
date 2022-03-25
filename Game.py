@@ -1,3 +1,4 @@
+import os
 '''
 Created on Apr 19, 2021
 '''
@@ -7,8 +8,9 @@ Created on Apr 19, 2021
 # Code for the crown text art is from https://www.asciiart.eu/clothing-and-accessories/crowns 
 # Code for the dragon text art is from https://www.asciiart.eu/mythology/dragons
 # Code for the small village text art is from https://www.asciiart.eu/buildings-and-places/cities
-
+clearConsole = lambda: os.system('cls' if os.name in ('nt', 'dos') else 'clear')
 def adventureGame():
+    clearConsole()
     def skull(a):
         if a== 1:
             print()
@@ -78,8 +80,8 @@ def adventureGame():
             print()
             print(" VERY WELL THEN, THIS QUEST IS NOT FOR THE FAINT OF HEARTICHOKES.")
             print()
-            retry= input("Do you want to play now? (yes/no): ")
-            if retry.lower().strip()== "yes":
+            retry = input("Do you want to play now? (yes/no): ")
+            if retry.lower().strip() == "yes":
                 print()
                 adventureGame()
             else:
@@ -89,11 +91,12 @@ def adventureGame():
     print('were exiled years ago, making you exempt from its impact. The king has summoned you requesting that you find the')
     print('wizard and rid your homeland of its plague before its too late...') 
     a = input("Do you accept? (yes/no): ")
-    if a.lower().strip()== "yes":
+    if a.lower().strip() == "yes":
+        clearConsole()
         print()
         print ("Very noble, you have chosen your people... May the odds fall in your favor.")
         print()
-        options= ["a) Pickup a mushroom and keep moving", "b) Eat the mushrooms", "a) Stay", "b) Flee",
+        options = ["a) Pickup a mushroom and keep moving", "b) Eat the mushrooms", "a) Stay", "b) Flee",
                   "a) Eat the radish","b) Take him to his lair", "c) Threaten to eat him, then take him to his lair",
                   "a) Throw the wizard at the Alpaca", "b) Flee", "c) Feed the mushroom you picked up to the Alpaca", 
                   "a) Return to your country where you will be hailed as a hero", "b) Accept the Wizard’s offer",
@@ -106,8 +109,9 @@ def adventureGame():
             print()
             print(options[i])
             print()
-        choice= input("Your answer (a/b): ")
-        if choice.lower().strip()== "a":
+        choice = input("Your answer (a/b): ")
+        if choice.lower().strip() == "a":
+            clearConsole()
     #Level 2
             print()
             print("Good choice! You continue walking and find a cottage with an old couple who take you in for the night and feed you.")
@@ -119,7 +123,8 @@ def adventureGame():
                 print(options[i])
                 print()
             choice= input("Your answer (a/b): ")
-            if choice.lower().strip()== "a":
+            if choice.lower().strip() == "a":
+                clearConsole()
         #Level 3
                 print()
                 print('They discuss how destructive the giant Alpaca (that your king set free last month) has been to their land and now to Borx.')
@@ -131,8 +136,9 @@ def adventureGame():
                     print()
                     print(options[i])
                     print()
-                choice= input("Your answer (a/b/c): ")
-                if choice.lower().strip() == "b" or choice.lower().strip()== "c":
+                choice = input("Your answer (a/b/c): ")
+                if choice.lower().strip() == "b" or choice.lower().strip() == "c":
+                    clearConsole()
         #Level 4
                     print()
                     print("You are on route to the Wizard's lair when you run into the giant Alpaca! You remember learning that the Alpaca")
@@ -142,8 +148,9 @@ def adventureGame():
                         print()
                         print(options[i])
                         print()
-                    choice= input("Your answer (a/b/c): ")
-                    if choice.lower().strip()== "c":
+                    choice = input("Your answer (a/b/c): ")
+                    if choice.lower().strip() == "c":
+                        clearConsole()
         #Level 5
                         print()
                         print('Hurrah! The formerly giant Alpaca is now normal size and the Wizard is both impressed and grateful. After a few')
@@ -155,7 +162,8 @@ def adventureGame():
                             print(options[i])
                             print()
                         choice= input("Your answer (a/b/c/d): ")
-                        if choice.lower().strip()== "a":
+                        if choice.lower().strip() == "a":
+                            clearConsole()
                             print ("                           ___")
                             print ("                          ( ((")
                             print ("                           ) ))")
@@ -168,7 +176,8 @@ def adventureGame():
                             print ("                          (_((")
                             print()
                             print ("                         WELCOME HOME HERO, MISSION ACCOMPLISHED                    ")
-                        elif choice.lower().strip()== "b":
+                        elif choice.lower().strip() == "b":
+                            clearConsole()
                             print ('                                   $""$o')
                             print ('                                  $"  $$')
                             print ('                                   $$$$')
@@ -189,7 +198,8 @@ def adventureGame():
                             print ('           $"$"$"$"$"$"$"$"$"$"$"$"$"$"$"$"$"$"$"$"$"$"$"$"$"$"$')
                             print()
                             print ('              WELCOME TO BORX YOUR HIGHNESS, MISSION SUCCESS')
-                        elif choice.lower().strip()== "c":
+                        elif choice.lower().strip() == "c":
+                            clearConsole()
                             print ("              __ ")
                             print ("          _.-'.-'-.__")
                             print ("       .-'.       '-.'-._ __.--._")
@@ -222,7 +232,8 @@ def adventureGame():
                             print ("                                      '-' -.\ ")
                             print()
                             print("    YOU'VE WON, BUT GET SOME REST.... A HERO'S WORK IS NEVER DONE")
-                        elif choice.lower().strip()== "d":
+                        elif choice.lower().strip() == "d":
+                            clearConsole()
                             print ("      ~         ~~          __")
                             print ("            _T      .,,.    ~--~ ^^")
                             print ("      ^^   // \                    ~")
@@ -237,17 +248,23 @@ def adventureGame():
                             print()
                             print ("  CONGRATULATIONS HERO, A NEW LIFE AWAITS")
                         else:
+                            clearConsole()
                             skull(1)
                     else:
+                        clearConsole()
                         skull(1)
                 else:
-                    skull(1)  
+                    clearConsole()
+                    skull(1)
             else:
+                clearConsole()
                 skull(1)
             
         else:
+            clearConsole()
             skull(1)
     else:
+        clearConsole()
         skull(2)
         
 adventureGame()
