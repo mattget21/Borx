@@ -11,6 +11,13 @@ Created on Apr 19, 2021
 clearConsole = lambda: os.system('cls' if os.name in ('nt', 'dos') else 'clear')
 def adventureGame():
     clearConsole()
+    def tryAgain():
+        retry = input("Do you want to play again? (yes/no): ")
+        if retry.lower().strip()== "yes":
+            clearConsole()
+            adventureGame()
+        else:
+            clearConsole()
     def skull(a):
         if a== 1:
             print()
@@ -43,12 +50,7 @@ def adventureGame():
             print()
             print("          LETTUCE MOURN. ALL IS LOST. YOU ARE BEET. ")
             print()
-            retry= input("Do you want to play again? (yes/no): ")
-            if retry.lower().strip()== "yes":
-                print()
-                adventureGame()
-            else:
-                print("Game Over")
+            tryAgain()
         elif a==2:
             print()
             print('                           uuuuuuu') 
@@ -80,12 +82,12 @@ def adventureGame():
             print()
             print(" VERY WELL THEN, THIS QUEST IS NOT FOR THE FAINT OF HEARTICHOKES.")
             print()
-            retry = input("Do you want to play now? (yes/no): ")
-            if retry.lower().strip() == "yes":
-                print()
+            retry = input("Are you sure? (yes/no): ")
+            if retry.lower().strip()== "no":
+                clearConsole()
                 adventureGame()
             else:
-                print("Game Over")
+                clearConsole()
     print('Hello hero, your country has been cursed by the self-proclaimed "Evil Wizard of Borx" turning everyone living')
     print('within its borders into talking produce, 72 hours before they turn into complete vegtables. Luckily for you, you')
     print('were exiled years ago, making you exempt from its impact. The king has summoned you requesting that you find the')
@@ -176,6 +178,7 @@ def adventureGame():
                             print ("                          (_((")
                             print()
                             print ("                         WELCOME HOME HERO, MISSION ACCOMPLISHED                    ")
+                            tryAgain()
                         elif choice.lower().strip() == "b":
                             clearConsole()
                             print ('                                   $""$o')
@@ -198,6 +201,7 @@ def adventureGame():
                             print ('           $"$"$"$"$"$"$"$"$"$"$"$"$"$"$"$"$"$"$"$"$"$"$"$"$"$"$')
                             print()
                             print ('              WELCOME TO BORX YOUR HIGHNESS, MISSION SUCCESS')
+                            tryAgain()
                         elif choice.lower().strip() == "c":
                             clearConsole()
                             print ("              __ ")
@@ -232,6 +236,7 @@ def adventureGame():
                             print ("                                      '-' -.\ ")
                             print()
                             print("    YOU'VE WON, BUT GET SOME REST.... A HERO'S WORK IS NEVER DONE")
+                            tryAgain()
                         elif choice.lower().strip() == "d":
                             clearConsole()
                             print ("      ~         ~~          __")
@@ -247,6 +252,7 @@ def adventureGame():
                             print ("       ..    ..-''    ;       ''. '")
                             print()
                             print ("  CONGRATULATIONS HERO, A NEW LIFE AWAITS")
+                            tryAgain()
                         else:
                             clearConsole()
                             skull(1)
